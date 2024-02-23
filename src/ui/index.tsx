@@ -8,6 +8,6 @@ import '@boardzilla/core/index.css';
 render(setup, {
   settings: {
   },
-  layout: board => {
+  layout: game => {
   }
 });
