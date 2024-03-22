@@ -1,24 +1,21 @@
 import {
   createGame,
-  createGameClasses,
   Player,
+  Space,
+  Piece,
   Game,
 } from '@boardzilla/core';
 
-export class MyGamePlayer extends Player<MyGamePlayer, MyGame> {
-};
-
-class MyGame extends Game<MyGamePlayer, MyGame> {
+export class MyGamePlayer extends Player<MyGame, MyGamePlayer> {
 }
 
-const { Space, Piece } = createGameClasses<MyGamePlayer, MyGame>();
+class MyGame extends Game<MyGame, MyGamePlayer> {
+}
 
 export default createGame(MyGamePlayer, MyGame, game => {
 
   const { action } = game;
   const { playerActions, loop, eachPlayer } = game.flowCommands;
-
-  game.registerClasses();
 
   game.defineActions({
   });
